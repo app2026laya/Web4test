@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>
+Request for certification
+</title>
+<style>
+body{
+    font-family: "Segoe UI", Arial, sans-serif;
+    background:#eef2f7;
+    margin:0;
+}
+
+/* FORM CONTAINER */
+.container{
+    max-width:700px;
+    margin:30px auto;
+    background:white;
+    padding:30px;
+    border-radius:8px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* SECTION TITLE */
+.section-title{
+    font-weight:bold;
+    border-bottom:2px solid #1f3c88;
+    padding-bottom:5px;
+    margin-bottom:20px;
+    color:#1f3c88;
+}
+
+/* FORM FIELDS */
+label{
+    font-weight:600;
+    font-size:14px;
+    color:#333;
+}
+
+input, select{
+    width:100%;
+   max-width: 400px;   
+    padding:10px;
+    margin-top:5px;
+    margin-bottom:18px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:14px;
+}
+
+input:focus, select:focus{
+    border-color:#1f3c88;
+    outline:none;
+}
+
+/* GRID */
+.row{
+    display:flex;
+    gap:15px;
+}
+
+.form-row input,
+.form-row select {
+    flex: 1;
+}
+
+.row div{
+    flex:1;
+}
+.age-field {
+    flex: 1;
+}
+.address-field {
+    flex: 2;
+}
+
+.occupation-field {
+    flex: 2;
+}
+/* BUTTON */
+button{
+    width:100%;
+    padding:14px;
+    background:#1f3c88;
+    color:white;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#162d63;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-row input,
+    .form-row select {
+        width: 100%;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<form method="POST" action="{{ url_for('printcertificate')}}">
+     <div class="section-title">
+        Requester's Information
+     </div>
+       <label>Full Name</label>
+        <input type="text" name="fullname" required>
+
+<div class="row">
+    <div>
+        <label>Address</label>
+        <select name="gender" required>
+            <option value="Tanigue">Purok Tanigue</option>
+            <option value="Lapu-lapu">Purok Lapu-lapu</option>
+            <option value="Maya-maya">Purok Maya-maya</option>
+        </select>
+    </div>
+</div>
+<div class="row">
+    <div>
+    <label>Uri ng Sertipikasyon</label>
+    <select name="cert_type">
+    <option value="indigency">Certificate of Indigency</option>
+    <option value="residency">Certificate of Residency</option>
+    <option value="clearance">Bgy. Clearance</option>
+    </select>
+    </div>
+</div>
+    <button type="submit">Ituloy ang request</button>
+</form>
+
+<script>
+document.getElementById("bday").addEventListener("change", function() {
+
+    let bday = new Date(this.value);
+    let today = new Date();
+
+    let age = today.getFullYear() - bday.getFullYear();
+    let m = today.getMonth() - bday.getMonth();
+
+    if (m < 0 || (m === 0 && today.getDate() < bday.getDate())) { age--; }
+
+    document.getElementById("age").value = age;
+});
+</script>
+</body>
+</html>

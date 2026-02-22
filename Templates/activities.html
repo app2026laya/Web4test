@@ -1,0 +1,12 @@
+<section id="news" style="background:#fff;">
+    <div class="container">
+      <h3>Bagong balita at panawagan</h3>
+ {% for item in activities %}
+      <img src="{{ url_for('static', filename='images/' ~ item.image) }}" alt="">
+      <div class="card-content">
+           <h4>{{ item.date }}</h4>
+            <p>{{ item.title }}</p>
+      </div>
+ {% endfor %}
+    </div>
+ </section>

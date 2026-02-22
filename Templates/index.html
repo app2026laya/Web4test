@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Barangay Aplaya - Official Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <ink rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/thiscss.css') }}"/>
+
+</head>
+<body style="min-width:100vh;color:brown;">
+  <header>
+    <div class="container">
+        <div class="logo">
+          <img src="{{ url_for('static', filename='images/logo1.png') }}">
+          <div>
+            <h1>Barangay Aplaya</h1><p>Dingalan, Aurora</p>
+          </div>
+          <div>
+           • Matatag • Matapat  • Mahusay
+          </div>
+        </div>
+     </div>
+        <div style="background:#debe00;display: flex; gap: 20px;min-width:100vh">          
+          <a style="color:blue" href="#home">Home</a>
+          <a style="color:blue" href="#about">Tungkol</a>
+          <a style="color:blue" href="#services">Serbisyo</a>
+          <a style="color:blue" href="#officials">Opisyales</a>
+          <a style="color:blue" href="#news">Balita at Panawagan</a>
+          <a style="color:blue" href="#contact">Kontak</a>     
+        </div>
+ </header>
+
+  <section class="hero"  style="background-image:url('{{ url_for('static', filename='images/batanesoftheeast.png') }}')"> 
+    <div class="container">
+      <h1>WELCOME TO Barangay Aplaya</h1>
+      <p>Mahusay na pamamahala at tapat na paglilingkod</p>
+    
+  <!--     
+      <a href="#services" class="btn" style="color:red">Humingi ng Barangay Clearance at Barangay Certificate</a>
+  -->  
+    </div>
+    
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h3>Tungkol sa Aplaya</h3>
+      <p style="max-width:900px; margin:0 auto 40px; text-align:center; font-size:1.1rem;">
+Ang Barangay Aplaya ay isa sa labing-isang (11) barangay na bumubuo sa baybaying bayan ng Dingalan sa lalawigan ng Aurora sa Gitnang Luzon. Matatagpuan ito sa silangang bahagi ng Dingalan at nakaharap sa Karagatang Pasipiko. Bahagi ito ng mga barangay na nasa tabing-dagat ng munisipalidad. Ang pangalang “Aplaya” ay mula sa salitang Filipino/Spanish na nangangahulugang “dalampasigan” o “tabing-dagat.” Ipinapakita nito ang heograpikal na lokasyon nito sa baybayin ng Dingalan Bay.
+Noong unang panahon, ang Aplaya ay hindi isang sentralisadong pamayanan; karamihan sa mga unang nanirahan dito ay tumira malapit sa baybayin kaysa sa loob ng lupain dahil ang kanilang kabuhayan ay nakasalalay sa dagat. Ang pangingisda noon—at hanggang ngayon—ang pangunahing pinagkukunan ng ikinabubuhay ng maraming residente. Marami sa kanila ay kasapi ng mga samahan ng mangingisda at may mga bangkang ginagamit sa pangingisda sa look.
+Sa paglipas ng panahon, nabuo ang mga purok tulad ng Lapu-Lapu, Tanigue, at Maya-Maya na nagsilbing pundasyon ng barangay. Habang dumarami ang populasyon, unti-unting nagbago ang Aplaya mula sa isang kalat-kalat na pamayanang pangisdaan tungo sa isang mas organisadong komunidad na may sariling pamunuan at sistemang pamamahala ng barangay.
+Sa datos ng sensus, makikita ang patuloy na paglaki ng populasyon ng barangay sa paglipas ng mga dekada. Mula sa 850 katao noong 1990, umabot ito sa 2,148 noong 2020.
+Hanggang sa kasalukuyan, ang pangingisda pa rin ang pangunahing kabuhayan ng maraming pamilya sa Aplaya. Dahil sa lokasyon nitong baybayin, karamihan sa mga pamilya ay umaasa sa yamang-dagat para sa kanilang ikinabubuhay. Ang ekonomiya at paraan ng pamumuhay ng barangay ay matagal nang nakaugnay sa galaw ng dagat, panahon, at mga pagbabago ng mga panahon, na humuhubog sa kultura at pang araw-araw na gawain.
+
+      <div class="grid">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1581092160560-1c1e428e9d65?auto=format&fit=crop&q=80" alt="">
+          <div class="card-content">
+            <h4>Bisyon</h4>
+            <p>Isang progresibo, mapayapa, at maka-Diyos na barangay kung saan ang bawat mamamayan ay namumuhay nang may dignidad at oportunidad.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1517248135467-2c7ed3ab7229?auto=format&fit=crop&q=80" alt="">
+          <div class="card-content">
+            <h4>Misyon</h4>
+            <p>Magbigay ng mahusay, malinaw, at maagap na pamamahala para sa pangkalahatang kapakanan ng lahat ng mamamayan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" style="background:#fff;">
+    <div class="container">
+      <h3>Mga Serbisyo at Programa</h3>
+      <div class="grid">
+        <div class="card">
+          <i class="fas fa-file-alt" style="font-size:3.5rem; color:var(--primary); margin:20px auto; display:block; text-align:center;"></i>
+          <div class="card-content">
+            <h4>Issuance of Clearances & Certificates</h4>
+            <p>Barangay Clearance, Certificate of Residency, Indigency, etc.</p>
+                       
+            <a href="{{ url_for('fillupform')}}">Pindutin</a>
+           
+          </div>
+        </div>
+        <div class="card">
+          <i class="fas fa-heartbeat" style="font-size:3.5rem; color:var(--primary); margin:20px auto; display:block; text-align:center;"></i>
+          <div class="card-content">
+            <h4>Health & Wellness</h4>
+            <p>Medical missions, vaccination drives, senior citizen programs</p>
+          </div>
+        </div>
+        <div class="card">
+          <i class="fas fa-broom" style="font-size:3.5rem; color:var(--primary); margin:20px auto; display:block; text-align:center;"></i>
+          <div class="card-content">
+            <h4>Cleanliness & Environment</h4>
+            <p>Waste management, tree planting, drainage maintenance</p>
+          </div>
+        </div>
+        <div class="card">
+          <i class="fas fa-gavel" style="font-size:3.5rem; color:var(--primary); margin:20px auto; display:block; text-align:center;"></i>
+          <div class="card-content">
+            <h4>Katarungang Pambarangay</h4>
+            <p>Mediation and amicable settlement of disputes</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="officials" style="background:var(--light);">
+    <div class="container">
+      <h3>Opisyales ng Bgy. Aplaya</h3>
+      <div class="grid officials">
+        <div class="card img">
+          <img src="{{ url_for('static', filename='images/chairman.jpg') }}"></img>
+          <div class="card-content">
+            <h4>Hon. Macario F. Roxas</h4>
+            <p>Punong Barangay</p>
+          </div>
+        </div>
+        <!-- Add more officials the same way -->
+        <div class="card img">
+          <img src="{{ url_for('static', filename='images/womanavatar.jpg') }}"></img>
+          <div class="card-content">
+            <h4>Hon. Magdalena Lazaro</h4>
+            <p>Barangay Kagawad</p>
+          </div>
+        </div>
+        <div class="card img">
+          <img src="{{ url_for('static', filename='images/chairman.jpg') }}"></img>
+          <div class="card-content">
+            <h4>Hon. Rodolfo Villegas </h4>
+            <p>Barangay Kagawad</p>
+          </div>
+        </div>
+        <div class="card img">
+          <img src="{{ url_for('static', filename='images/chairman.jpg') }}"></img>
+          <div class="card-content">
+            <h4>Hon. Eugenio Bermudez</h4>
+            <p>Barangay Kagawad</p>
+          </div>
+        </div>
+        <div class="card img">
+          <img src="{{ url_for('static', filename='images/chairman.jpg') }}"></img>
+          <div class="card-content">
+            <h4>Hon. Rodrigo Roxas</h4>
+            <p>Barangay Kagawad</p>
+          </div>
+        </div>
+        <div class="card img">
+          <img src="{{ url_for('static', filename='images/chairman.jpg') }}"></img>
+          <div class="card-content">
+            <h4>Hon. Ricardo Roxas</h4>
+            <p>Barangay Kagawad</p>
+          </div>
+        </div>
+        <div class="card img">
+          <img src="{{ url_for('static', filename='images/chairman.jpg') }}"></img>
+          <div class="card-content">
+            <h4>Hon. Frederick Abat</h4>
+            <p>Barangay Kagawad</p>
+          </div>
+        </div>
+        <div class="card img">
+          <img src="{{ url_for('static', filename='images/chairman.jpg') }}"></img>
+          <div class="card-content">
+            <h4>Hon. Froilan Tena</h4>
+            <p>Barangay Kagawad</p>
+          </div>
+        </div>
+        <div class="card img">
+          <img src="{{ url_for('static', filename='images/womanavatar.jpg') }}"></img>
+          <div class="card-content">
+            <h4>Mary Jane Sulita</h4>
+            <p>Administrative Officer</p>
+          </div>
+        </div>
+        <div class="card img">
+          <img src="{{ url_for('static', filename='images/womanavatar.jpg') }}"></img>
+          <div class="card-content">
+            <h4>Jhonaliza Quejada</h4>
+            <p>Barangay Secretary</p>
+          </div>
+        </div>
+        <div class="card img">
+          <img src="{{ url_for('static', filename='images/womanavatar.jpg') }}"></img>
+          <div class="card-content">
+            <h4>Janet Tena</h4>
+            <p>Barangay Treasurer</p>
+          </div>
+        </div>      
+      </div>
+    </div>
+  </section>
+
+  <!-- Chart.js CDN (latest stable as of 2026) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+<section style="font-family: Arial, Helvetica, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 20px 15px;
+      line-height: 1.6;">
+
+  <div style="max-width: 1000px; margin: 0 auto;">
+    <h1 style=""text-align: center;color: #1a3c5e;margin-bottom: 8px;">Residents per Purok</h1>
+    <p class="subtitle">Barangay Aplaya • As of February 9999</p>
+
+    <div class="stats-grid">
+
+      <div class="purok-card">
+        <div class="purok-title">Tanigue</div>
+        <div class="population">428</div>
+        <div class="label">Registered Residents</div>
+      </div>
+
+      <div class="purok-card">
+        <div class="purok-title">Maya-maya</div>
+        <div class="population">375</div>
+        <div class="label">Registered Residents</div>
+      </div>
+
+      <div class="purok-card">
+        <div class="purok-title">Lapu-lapu</div>
+        <div class="population">512</div>
+        <div class="label">Registered Residents</div>
+      </div>
+
+    </div>
+
+    <!-- Bar Chart -->
+    <div class="chart-container">
+      <div class="chart-title">Residente per Purok (Bar Chart)</div>
+      <canvas id="barChart"></canvas>
+    </div>
+
+    <!-- Pie Chart -->
+    <div class="chart-container">
+      <div class="chart-title">Residente per Purok (Pie Chart)</div>
+      <canvas id="pieChart"></canvas>
+    </div>
+  </div>
+<script>
+    // Data
+    const puroks = ['Tanigue', 'Maya-maya', 'Lapu-lapu'];
+    const residents = [428, 375, 512];
+    const colors = ['#36A2EB', '#FFCE56', '#FF6384'];
+
+    // Bar Chart
+    new Chart(document.getElementById('barChart'), {
+      type: 'bar',
+      data: {
+        labels: puroks,
+        datasets: [{
+          label: 'Residents',
+          data: residents,
+          backgroundColor: colors,
+          borderColor: colors.map(c => c.replace('1)', '0.8)')),
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: { display: true, text: 'Number of Residents' }
+          }
+        },
+        plugins: {
+          legend: { display: false }
+        }
+      }
+    });
+
+    // Pie Chart
+    new Chart(document.getElementById('pieChart'), {
+      type: 'pie',
+      data: {
+        labels: puroks,
+        datasets: [{
+          data: residents,
+          backgroundColor: colors,
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'bottom'
+          }
+        }
+      }
+    });
+  </script>   
+</section>
+    
+    
+</section>
+  sq
+<section id="news" style="background:#fff;">
+    <div class="container">
+      <h3>Bagong balita at panawagan</h3>
+ {% for item in activities %}
+      <img src="{{ url_for('static', filename='images/' ~ item.image) }}" alt="">
+      <div class="card-content">
+           <h4>{{ item.date }}</h4>
+            <p>{{ item.title }}</p>
+      </div>
+ {% endfor %}
+    </div>
+ </section>
+    
+  {% for item in activities %}
+     <section class="section">
+    <div>
+        <img src="{{ url_for('static', filename='images/' ~ item.image) }}" alt="News Image">
+    </div>
+
+    <div>
+        {{ item.date }}
+    </div>
+
+    <div>
+        {{ item.title }}
+    </div>
+</section>
+{% endfor %}
+
+
+  <footer>
+    <div class="container">
+       <div class="footer-grid">
+          <p>Kontakin kami sa:<br>
+             Phone: (0999) 123-4567<br>
+             Email: barangayaplaya@gmail.com
+          </p>
+        </div>
+        <div>
+          <h4 style="color:#bece00">Quick Links</h4>
+          <ul style="list-style:none; padding:0;">
+            <li><a href="#" style="color:blue;">Request Documents</a></li>
+            <li><a href="#" style="color:blue;">File Complaint</a></li>
+            <li><a href="#" style="color:blue;">Barangay Ordinances</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="social-links" style="color:blue">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+
+      <div class="copyright" style="color:black"">
+        © 2026 Barangay Aplaya • Pinalakas ng Pagkakaisa
+      </div>
+    </div>
+  </footer>
+<style>
+
+    :root {
+      --primary: green;
+      --secondary: #ce1126;
+      --light: #f8f9fa;
+      --dark: #222;
+      --gold: #daaa0a;         /* Subtle gold for highlights */
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: var(--light);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      color:brown;
+    }
+
+    /* Header / Navbar */
+    header {
+      background: linear-gradient(to right, var(--primary), #0047ab);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .top-bar {
+      background: #75975e;
+      text-align: center;
+      padding: 6px 0;
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: #e5deb0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #e5de00;
+    }
+
+    .logo img {
+      height: 60px;
+      width: auto;
+    }
+
+    .logo h1 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    .logo p {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: yellow;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55))
+      text-align: center;
+      padding: 120px 0px;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 16px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 800px;
+      margin: 0 auto 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #bece50;
+      color: white;
+      padding: 14px 32px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .btn:hover {
+      background: #b50e1f;
+      transform: translateY(-3px);
+    }
+
+    /* Main Content Sections */
+    section {
+      padding: 70px 0;
+    }
+
+    h3 {
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 40px;
+      font-size: 2.2rem;
+      position: relative;
+    }
+
+    h3::after {
+      content: '';
+      width: 80px;
+      height: 4px;
+      background: var(--gold);
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 24px;
+      text-align: center;
+    }
+
+    .card h4 {
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+/* Officials */
+    .officials .grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .official-photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--primary);
+      margin: 0 auto 16px;
+      display: block;
+    }
+
+
+    
+    .subtitle {
+      text-align: center;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+
+    .purok-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 24px;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .purok-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .purok-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #1a3c5e;
+      margin-bottom: 10px;
+    }
+
+    .population {
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: #e65100;
+      margin: 6px 0;
+    }
+
+    .label {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .chart-container {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 24px;
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .chart-title {
+      text-align: center;
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #1a3c5e;
+      margin-bottom: 16px;
+    }
+
+    canvas {
+      max-height: 380px;
+    }
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: white;
+      padding: 60px 0 20px;
+      text-align: center;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+      color: black;
+    }
+
+    .social-links a {
+      color: white;
+      font-size: 1.6rem;
+      margin: 0 12px;
+      transition: 0.3s;
+    }
+
+    .social-links a:hover {
+      color: var(--gold);
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: 20px;
+      font-size: 0.9rem;
+    }
+
+@media (max-width: 768px) {
+      .nav-links {
+        display: none; /* You can add hamburger menu JS later */
+      }
+      .hero {
+        padding: 90px 20px;
+      }
+      .hero h2 {
+        font-size: 2.4rem;
+      }
+    }
+</style>
+</body>
+</html>
